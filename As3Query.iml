@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="Flex" version="4">
+  <component name="FlexBuildConfigurationManager" active="As3Query">
+    <configurations>
+      <configuration name="As3Query" target-platform="Desktop" output-type="Library" output-file="As3Query_1.0.swc" output-folder="$MODULE_DIR$/bin">
+        <dependencies>
+          <entries>
+            <entry library-id="06412880-47d4-4d72-a6e9-530dcfa757c2">
+              <dependency linkage="External" />
+            </entry>
+            <entry library-id="7e74d29e-b61a-4993-897c-3c06b6127a47">
+              <dependency linkage="Test" />
+            </entry>
+            <entry library-id="9489077d-0335-4315-9021-6b1b7e9d583a">
+              <dependency linkage="External" />
+            </entry>
+          </entries>
+          <sdk name="air14_4.12.1" />
+        </dependencies>
+        <compiler-options />
+        <packaging-air-desktop />
+        <packaging-android />
+        <packaging-ios />
+      </configuration>
+    </configurations>
+    <compiler-options />
+  </component>
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
+    </content>
+    <orderEntry type="jdk" jdkName="air14_4.12.1" jdkType="Flex SDK Type (new)" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="06412880-47d4-4d72-a6e9-530dcfa757c2" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/as3promise.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="7e74d29e-b61a-4993-897c-3c06b6127a47" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/flexunit.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library type="flex">
+        <properties id="9489077d-0335-4315-9021-6b1b7e9d583a" />
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/libs/RObject.swc!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+
