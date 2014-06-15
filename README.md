@@ -81,6 +81,22 @@ Usage:
     ```
 5. Perform different operations:
     
+    <b>Criteria</b>
+    ```ActionScript
+        session.criteria(testCriteriaEntity1).by(Order.asc(TestEntity.ATTR_ID)).list.then(function ():void{ trace('ok') });
+        session.criteria(TestEntity).when(Restrictions.Eq(TestEntity.ATTR_ID, 1)).unique.then(function ():void{ trace('ok') });
+    ```
+    
+    <b>Create, update</b>
+    ```ActionScript
+        session.save(testCriteriaEntity1).then(function ():void{ trace('ok') });
+    ```
+    
+    <b>Delete</b>
+    ```ActionScript
+        session.remove(testCriteriaEntity1).then(function ():void{ trace('ok') });
+    ```
+    
     <b>Transactions</b>
     ```ActionScript
         var transaction:ITransaction = session.transaction;
@@ -94,12 +110,7 @@ Usage:
         transaction.run.then(function ():void{ trace('ok') });
     ```
     
-    <b>Criteria</b>
-    ```ActionScript
-        session.criteria(TestEntity).by(Order.asc(TestCriteriaEntity.ATTR_ID)).list.then(function ():void{ trace('ok') });
-        session.criteria(TestEntity).unique.then(function ():void{ trace('ok') });
-    ```
-    
+   
 Acceptable performance on Samsung Galaxy Tab 10.1
 
 You can add metadata validation to Intellij Idea using KnownMetaData.dtd file.
