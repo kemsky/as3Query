@@ -47,7 +47,7 @@ Usage:
             public var str:String;
     
             [Column(foreignKey="table(id)", options="deferred")]
-            public var fk_table:String;
+            public var fk_table:int;
         }
     ```
 2. Map entity:
