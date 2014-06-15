@@ -51,11 +51,13 @@ Usage:
         }
     ```
 2. Map entity:
+
     ```ActionScript
         var entityManager:EntityMapper = new EntityMapper();
         entityManager.registerEntity(TestEntity);
     ```
 3. Create tables:
+
     ```ActionScript
          var connection:SQLConnection = new SQLConnection();
          connection.open(file, SQLMode.CREATE);
@@ -72,6 +74,7 @@ Usage:
          }
     ```
 4. Create session:
+
     ```ActionScript
         var session:Session = new Session(mapper);
         session.open(file.nativePath, SQLMode.UPDATE).then(function ():void{ trace('ok') });
