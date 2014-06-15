@@ -110,9 +110,7 @@ Usage:
 
         transaction.insert(testCriteriaEntity1);
         transaction.insert(testCriteriaEntity2);
-        transaction.remove(TestCriteriaEntity);
-        transaction.insert(testCriteriaEntity1);
-        transaction.insert(testCriteriaEntity2);
+        transaction.remove(testCriteriaEntity2);
         
         transaction.run.then(function (operation:ISQLOperation):void{ 
             trace('ok'); 
