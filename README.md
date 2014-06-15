@@ -1,7 +1,7 @@
 As3Query
 ========
 
-Another ORM and query DSL for ActionScript
+Another ORM and query DSL for Flex and Adobe Air
 
 Uses [Promises/A+](https://github.com/CodeCatalyst/promise-as3) library.
 
