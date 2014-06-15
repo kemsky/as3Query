@@ -83,8 +83,15 @@ Usage:
     
     <b>Criteria</b>
     ```ActionScript
-        session.criteria(testCriteriaEntity1).by(Order.asc(TestEntity.ATTR_ID)).list.then(function ():void{ trace('ok') });
-        session.criteria(TestEntity).when(Restrictions.Eq(TestEntity.ATTR_ID, 1)).unique.then(function ():void{ trace('ok') });
+        session.criteria(TestEntity).by(Order.asc(TestEntity.ATTR_ID)).list.then(function (operation:ISQLOperation):void{ 
+            trace(operation.result); 
+        });
+        session.criteria(TestEntity).when(Restrictions.Eq(TestEntity.ATTR_ID, 1)).unique.then(function (operation:ISQLOperation):void{ 
+            trace(operation.result); 
+        });
+        session.criteria(TestEntity).when(Restrictions.Eq(TestEntity.ATTR_ID, 1)).count.then(function (count:int):void{ 
+            trace(count); 
+        });
     ```
     
     <b>Create, update</b>
@@ -107,7 +114,9 @@ Usage:
         transaction.insert(testCriteriaEntity1);
         transaction.insert(testCriteriaEntity2);
         
-        transaction.run.then(function ():void{ trace('ok') });
+        transaction.run.then(function (operation:ISQLOperation):void{ 
+            trace('ok'); 
+        });
     ```
     
    
