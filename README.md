@@ -131,7 +131,5 @@ Usage:
     ```
     
    
-Acceptable performance on Samsung Galaxy Tab 10.1
-
 You can add metadata validation to Intellij Idea using KnownMetaData.dtd file.
 Open `Preferences > Schemas and DTDs > Add` KnownMetaData.dtd with URI `urn:Flex:Meta`
