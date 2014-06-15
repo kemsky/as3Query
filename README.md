@@ -81,7 +81,7 @@ Usage:
     ```
 5. Perform different operations:
     
-    *Transactions
+    <b>Transactions</b>
     ```ActionScript
         var transaction:ITransaction = session.transaction;
 
@@ -93,6 +93,13 @@ Usage:
         
         transaction.run.then(function ():void{ trace('ok') });
     ```
+    
+    <b>Criteria</b>
+    ```ActionScript
+        session.criteria(TestEntity).by(Order.asc(TestCriteriaEntity.ATTR_ID)).list.then(function ():void{ trace('ok') });
+        session.criteria(TestEntity).unique.then(function ():void{ trace('ok') });
+    ```
+    
 Acceptable performance on Samsung Galaxy Tab 10.1
 
 You can add metadata validation to Intellij Idea using KnownMetaData.dtd file.
