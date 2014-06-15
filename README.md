@@ -3,16 +3,16 @@ As3Query
 
 Another ORM and query DSL for ActionScript
 
-Uses [Promises/A+](https://github.com/CodeCatalyst/promise-as3) library
+Uses [Promises/A+](https://github.com/CodeCatalyst/promise-as3) library.
 
-Usage:
-
-1. Annotations list:
+Annotations list:
 * Specify table name `[Table(name="test")]`
 * Specify table index (or multiple indices) `[Index(name="test_index_1", columns="unsigned,bool", unique="true")]`
 * Specify table column `[Column(primaryKey, nullable="false", unique="true", foreignKey="table(id)", options="deferred", default="1")]`
 
-2. Put annotations:
+Usage:
+
+1. Put annotations:
     ```ActionScript
         [Table(name="test")]
         [Index(name="test_index_1", columns="unsigned,bool")]
@@ -50,12 +50,46 @@ Usage:
             public var fk_table:String;
         }
     ```
-3. Map entity:
+2. Map entity:
     ```ActionScript
         var entityManager:EntityMapper = new EntityMapper();
         entityManager.registerEntity(TestEntity);
     ```
-4.     
+3. Create tables:
+    ```ActionScript
+         var connection:SQLConnection = new SQLConnection();
+         connection.open(file, SQLMode.CREATE);
+         try
+         {
+            new CreateTables(connection, [TestEntity], mapper).call();
+         }
+         finally
+         {
+             if(connection.connected)
+             {
+                 connection.close();
+             }
+         }
+    ```
+4. Create session:
+    ```ActionScript
+        var session:Session = new Session(mapper);
+        session.open(file.nativePath, SQLMode.UPDATE).then(function ():void{ trace('ok') });
+    ```
+5. Perform different operations:
+    
+    *Transactions
+    ```ActionScript
+        var transaction:ITransaction = session.transaction;
+
+        transaction.insert(testCriteriaEntity1);
+        transaction.insert(testCriteriaEntity2);
+        transaction.remove(TestCriteriaEntity);
+        transaction.insert(testCriteriaEntity1);
+        transaction.insert(testCriteriaEntity2);
+        
+        transaction.run.then(function ():void{ trace('ok') });
+    ```
 Acceptable performance on Samsung Galaxy Tab 10.1
 
 You can add metadata validation to Intellij Idea using KnownMetaData.dtd file.
